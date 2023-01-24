@@ -1,0 +1,181 @@
+\documentclass{article}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage{listings}
+\date{today(2001,11,9)lilt al ra3ed}
+\author{hammouali youcef}
+\title{home work}
+\begin{document}
+\listoffigures
+\listoftables
+\listofalgorithms
+\lstlistoflistings
+\newpage
+\begin{figure}
+\maketitle
+Dans ce devoir j'apprends à écrire en \LaTeX
+Ce devoir sera noté comme assiduité, vous le faites individuellement. Je n'accepte pas les
+binômes.
+\section{Trafics logos}
+
+\begin{center}
+    
+
+\hspace{0.7cm}
+\includegraphics[height=3cm]{traffic.jpg} 
+\hspace{0.5cm}
+\includegraphics[height=3cm]{traffic1.jpg} 
+\hspace{0.5cm}
+\includegraphics[height=3cm]{traffic3.jpg} 
+\end{center}
+\caption{Exemple traffic logo}
+\label{figl}
+\end{figure}
+\clearpage
+\begin{table}
+\caption{Table of types in maths}
+\label{tab1}
+\end{table}
+\begin{table}
+\begin{tabular}{|p{1cm}|p{3cm}|p{1.7cm}|p{4cm}|p{3.5cm}|}
+
+\cline{2-5}  
+\multicolumn{1}{c|}{.} & \multicolumn{2}{c|}{Type 1}  &  \multicolumn{2}{c|}{Type 2}  \\
+\hline
+1 & $Deflection = \omega = 0$  & Y(0)  T(t) = 0 & $ Slope = \frac{d}{dx}\omega = 0$ & (L,t) = m0 . $ \frac{d^{2}}{dt^{2}\omega}(L,t) $ \\
+\hline
+2 & $ Slope = \frac{d}{dL}\omega = 0$ & Y'(L) T(t)= 0 &  4.E.I.Y'''(L).T(t) = m0.Y(L).Ï(t) & 4.E.I.$ \frac{d^{3}}{dx^{3}}\omega = 0 $ \\
+\hline
+\end{tabular} 
+\end{table}
+\section{Table maths}
+\section{Équations mathématiques}
+\section*{Equation 1}
+\begin{center}
+$ P_{xi} = \overline{U_{x}}+\sigma_{x}\frac{\Sigma^{N_{u}}_{k}D_{kx} x (\frac{S_{ki}-\overline{U_{k}}}{\sigma_{k}})}{\Sigma^{N_{u}}_{k}D_{kx}} $
+\end{center}
+Where : \newline
+
+$P_{xi}$: is the predicted rate for user x on item i \newline
+
+$S_{ki}$: is the rate of song i given by user k \newline
+
+$\overline{U_{x}}$: is the average rate of user x \newline
+
+$\overline{U_{k}}$: is the average rate of user k \newline
+
+$\sigma_{x}$: is the standard deviation of all the rates of user x
+\newpage
+\section*{Equation 2}
+Alternatively we may write the last display as: \newline
+
+$\displaystyle\left\lvert \int^{b}_{a} f(t) - g(t)\vert =  \lim_{n \to \infty} \sum_{i = 0}^{n} M_{i}(t_{i}-t_{i-1)} \right\rvert$
+\begin{center}
+$\leq \sum_{i = 0}^{n} M_{i}(t_{i}-t_{i-1)} = \int^{b}_{a} \lvert f(t) - g(t)\rvert dt < \delta = \varepsilon  $
+\end{center}
+L'apparence du texte normal x + y = 3 et celle des
+formules mathématiques x + y = 3 peuvent diérer.
+\begin{center}
+$ t = \sqrt{\dfrac{ln(c}{-2\lambda\sqrt{c}}} $ \qquad  $ f(x) = \dfrac{1}{\sqrt{2\pi\sigma}}  {e^{-\dfrac{(x-\mu)^{2}}{2\sigma^{2}}}}$ \newline
+
+$ H(X) = -\sum{i = 0}P(x_{i)log_{b}P(x_{i})} $
+\end{center}
+
+\section{linsting de latex}
+Dans cette partie faire un include d'un chier de n'importe quel fichier \LaTeX que vous avez deja avec la methode \textbf{inputlisting} 
+
+
+\begin{lstlisting}[]
+\end{lstlisting}
+
+
+
+
+\begin{lstlisting}[caption={Listing 1: code latex}]
+
+\documentclass{article}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\begin{document}
+\begin{algorithm}
+\caption{Algo 1}
+\end{lstlisting}
+\newpage
+\begin{lstlisting}
+\begin {algorithmic}[1]
+
+\STATE $y \leftarrow1$
+\ IF{$n < 0$}
+\STATE $X \leftarrow1/ x$
+\STATE $N \leftarrow -n$
+\ELSE
+\STATE $X \leftarrow x$
+\STATE $N \leftarrow n$
+\ENDIF
+
+\ end{algorithmic}
+\ end{algorithm}
+
+\end{document}
+\end{lstlisting}
+\section{Algorithmique}
+\newpage
+\begin{algorithm}
+
+\caption{Algorithm converts SOP equation to RPN}
+
+\begin{algorithmic}[1]
+
+\REQUIRE Initialize a $stack$ and a $queue$
+
+\FOR{$token$ in $SOP$}
+
+\IF{$token$ is a label}
+
+\STATE add $token$ to $queue$
+
+\ELSIF{$token$ is + or *}
+
+\IF{$token$ is + and top of $stack$ is *}
+
+\STATE pop the top of $stack$ to $queue$
+
+\ENDIF
+
+\STATE push $token$ onto $stack$
+
+
+
+\ELSIF{$token$ is (}
+
+\STATE push $token$ onto $stack$
+
+\ELSIF{$token$ is )}
+
+\STATE keep popping operators from $stack$ to $queue$ until sees (
+
+\ELSE
+
+\STATE error, exit
+
+\ENDIF
+
+\ENDFOR
+
+\STATE No more $token$ to consume, pop operators from $stack$ to $queue$
+
+\RETURN $queue$
+
+\end{algorithmic}
+
+\end{algorithm}
+
+
+
+
+\end{document}
